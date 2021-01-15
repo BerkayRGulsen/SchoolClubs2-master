@@ -1,0 +1,26 @@
+{% extends 'clubs/SocialClubs.html' %}
+{% load static %}
+
+{% block content2 %}
+    <div class="album  " style=";overflow: auto; height: 325px; background-color: #597eaa; border: 2px solid black">
+        {% if request.user.student == club.administration.president or request.user.student == club.administration.vicePresident or request.user.student == club.administration.secretary%}
+            <a class="btn btn-add w-50 fa fa-plus" href="{% url 'addEvent' %}">   Add</a>
+        {% endif %}
+        <div class="container">
+          <div class="row pt-3">
+            {% for post in posts %}
+                <div class="col-md-4">
+                  <div class="card mb-4 box-shadow">
+                    <a href="#"><img src=" {{ post.post_pic }}" class="card-img-top"  alt="post_img" style="height: 225px; width: 100%; display: block;"></a>
+                    <div class="card-body">
+                      <p class="card-text" style="font-size: 1em">{{ post.content }}</p>
+                      <p class="card-text" style="font-size: 0.5em">{{ post.start_date }}</p>
+                    </div>
+                  </div>
+                </div>
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+{% endblock %}
