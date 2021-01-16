@@ -47,9 +47,11 @@
                     <a class="btn home-links" style="height: 120px; width: 48%; background-color: #a64d79" href="{% url 'clubs' %}">All Clubs</a>
                     <a class="btn home-links" style="height: 120px; width: 48%;margin-left: 4%; background-color: #674ea7" href="{% url 'userpage' %}">My Page</a>
                 </div>
-                <div class="row" style="margin: 0px 10px 0px 10px">
-                    <a class="btn home-links" style="height: 120px; width: 100%; background-color: #45818e" href="{% url 'clubs' %}">My Club</a>
-                </div>
+                {% if request.user.is_authenticated %}
+                    <div class="row" style="margin: 0px 10px 0px 10px">
+                        <a class="btn home-links" style="height: 120px; width: 100%; background-color: #45818e" href="{% url 'myclubs'  request.user.student.id  %}">My Club</a>
+                    </div>
+                {% endif %}
                 </div>
             </div>
         </div>

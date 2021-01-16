@@ -6,6 +6,7 @@ from clubs import views
 urlpatterns = [
     path('', views.homepage, name='home'),
     path('clubs/', views.all_clubs, name='clubs'),
+    path('myclubs/<str:pk>', views.my_clubs, name='myclubs'),
 
 
     path('socialclubs/<str:pk>', views.socialclubs, name='socialclubs'),
@@ -20,11 +21,12 @@ urlpatterns = [
     path('message/', views.messages, name='message'),
     path('clubDetail/', views.clupDetail, name='clubDetail'),
 
-    path('addpost/', views.addPost, name='addPost'),
+    path('addpost<str:pk>/', views.addPost, name='addPost'),
     path('addevent/', views.addEvent, name='addEvent'),
     path('addsurvey/<str:pk>', views.addSurvey, name='addSurvey'),
-    path('adddiscussion/', views.addDiscussion, name='addDiscussion'),
-    path('join/', views.join, name='join'),
+    path('adddiscussion<str:pk>/', views.addDiscussion, name='addDiscussion'),
+    path('join/<str:pk>', views.join, name='join'),
+    path('leave/<str:pk>', views.leave, name='leave'),
     path('report/', views.report, name='report'),
 
     path('userpage/', views.userPage, name='userpage'),

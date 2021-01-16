@@ -18,11 +18,11 @@
 
                         <div class="card-body" style="overflow: auto">
                             {% for clubs in myclubs %}
-                                <a class="card link-card mt-1 embed-responsive-16by9 my-club-events" href="{% url 'announcement' clubs.id %}">
+                                <a class="card link-card mt-1 embed-responsive-16by9 my-club-events" href="{% url 'announcement' clubs.club.id %}">
                                     <div class="card-body">
-                                        <img src="{{ clubs.club_pic.url }}" class="card-img w-15">
+                                        <img src="{{ clubs.club.club_pic.url }}" class="card-img w-15">
                                         <div class="card-text w-80" style="display: inline-block; float: right">
-                                            <h3 class="">{{ clubs.club_name }}</h3>
+                                            <h3 class="">{{ clubs.club.club_name }}</h3>
                                         </div>
 
                                     </div>

@@ -8,7 +8,7 @@
     border: 2px solid black;min-height: 150px; max-height: 305px;overflow: auto">
 
         {% if request.user.student == club.administration.president or request.user.student == club.administration.vicePresident or request.user.student == club.administration.secretary%}
-            <a class="btn btn-add w-50 fa fa-plus" href="{% url 'addPost' %}">   Add</a>
+            <a class="btn btn-add w-50 fa fa-plus" href="">   Add</a>
         {% endif %}
 
         {% for events in announcements %}

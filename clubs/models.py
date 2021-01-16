@@ -92,7 +92,7 @@ class Comment(models.Model):
 
 
 class Posts(models.Model):
-    publisher = models.OneToOneField(Student, on_delete=models.CASCADE, blank=True, null=True)
+    publisher = models.ForeignKey(Student, on_delete=models.CASCADE, blank=True, null=True)
     club = models.ForeignKey(Club, models.SET_NULL, blank=True, null=True)
     start_date = models.DateTimeField(auto_now_add=True, null=True, blank=True, )
     content = models.TextField(blank=True, null=True)
